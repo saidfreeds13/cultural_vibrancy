@@ -81,46 +81,6 @@ This project provides a Python-based workflow for calculating and visualizing **
 
 ---
 
-## Example Workflow
-
-```python
-import geopandas as gpd
-import osmnx as ox
-from h3.api.numpy_int import polyfill, h3_to_geo_boundary
-from shapely.geometry import mapping, Polygon
-import numpy as np
-
-# Load cultural locations
-loc = gpd.read_file("/content/arts_petr.gpkg").to_crs(32636)
-
-# Get study area boundary
-area_gdf = ox.geocode_to_gdf("Петроградская").to_crs(32636)
-
-# Filter locations within area
-loc_inside = gpd.sjoin(loc, area_gdf, predicate="within")
-
-# Create hex grid over area
-geojson = mapping(area_gdf.geometry.iloc[0])
-def swap_coords(geojson):
-    coords = geojson['coordinates'][0]
-    return {'type': 'Polygon', 'coordinates': [[(lat, lng) for lng, lat in coords]]}
-hex_ids = polyfill(swap_coords(geojson), resolution=8)
-hex_polygons = [Polygon(h3_to_geo_boundary(h, geo_json=True)) for h in hex_ids]
-grid_h = gpd.GeoDataFrame({'h3_index': list(hex_ids)}, geometry=hex_polygons, crs='EPSG:4326').to_crs(32636)
-
-# Assign locations to hexes
-locations_on_grid = gpd.sjoin(loc_inside, grid_h, how='inner', predicate='within')
-
-# Calculate diversity indices per hex
-def richness(group): return group['Рубрики'].nunique()
-richness_p = locations_on_grid.groupby('h3_index').apply(richness)
-# ...repeat for other indices...
-
-# Merge results and plot
-```
-
----
-
 ## Diversity Indices Explained
 
 - **Richness:** Number of unique cultural categories in each hex.
@@ -139,18 +99,6 @@ richness_p = locations_on_grid.groupby('h3_index').apply(richness)
 
 ---
 
-## License
-
-MIT License.
-
----
-
 ## Contact
 
 For questions or contributions, please open an issue or contact the repository maintainer.
-
----
-
-**Happy mapping and analyzing urban cultural diversity!**
-
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/attachments/47431862/1cf7564a-7bb5-44f3-950f-19181d88e1aa/paste.txt
