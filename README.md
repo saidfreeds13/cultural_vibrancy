@@ -23,33 +23,11 @@ This project provides a Python-based calculation and visualization of **cultural
 
 ## Installation
 
-1. **Clone the repository** (if applicable) or download the notebook and required files.
+**Download the file "Diversity_indexes.ipynb" and open it in python 
 
-2. **Install dependencies** (in Colab or locally):
-    ```python
-    !pip install osmnx mapclassify h3 contextily
-    ```
-
-    **Main Python libraries used:**
-    - `osmnx`
-    - `mapclassify`
-    - `h3`
-    - `contextily`
-    - `geopandas`
-    - `pandas`
-    - `numpy`
-    - `matplotlib`
-    - `folium`
-    - `seaborn`
-    - `shapely`
-
----
-
-## Data Requirements
-
-- **Cultural Locations File:** A GeoPackage file (e.g., `arts_petr.gpkg`) with point locations and a categorical column (e.g., `Рубрики` for type/category).
-- **Study Area:** Defined by a place name (e.g., `"Петроградская"`) for boundary extraction via OSMnx.
-
+## Data inputs needed
+- **Cultural locations:** Any geo-file (`arts_petr.gpkg`) with point locations and a **categorical column** (e.g., `Рубрики` for type/category of a cultural location).
+- **Study area:** Define the area (`"Петроградская"`) for boundary extraction.
 ---
 
 ## Usage
@@ -83,11 +61,9 @@ This project provides a Python-based calculation and visualization of **cultural
 
 ---
 
-
 ## Customization
 
 - **Grid Resolution:** Adjust the H3 resolution for finer or coarser grids.
 - **Category Column:** Change `Рубрики` to match your dataset.
 - **Area of Interest:** Use any city or district supported by OSMnx.
-
 ---
