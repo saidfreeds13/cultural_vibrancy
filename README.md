@@ -1,21 +1,23 @@
-# cultural_vibrancy
-# Cultural Cityscape Diversity Calculator
+# Cultural Cityscape Diversity calculation 
 
-This project provides a Python-based workflow for calculating and visualizing **cultural cityscape diversity** within urban areas. It combines geospatial data processing, spatial grid analysis, and multiple diversity indices to help urbanists, researchers, and city planners evaluate the spatial richness and distribution of cultural locations in a city.
+This project provides a Python-based calculation and visualization of **cultural cityscape diversity** within urban areas. It includes two units of diversity analysis. First, the one via hexagons. Second, the one via buffer zones around residential buildings. At the end of each part of the code for two different units of analysis there is a section for merging and downloading in geopackages the cleaned dataset containing all 5 diversity indexes, allowing for a comparative analysis. 
 
 ---
 
-## Features
+## Code sections
 
-- **Automated Data Processing:** Reads and processes geospatial data of cultural locations.
-- **Spatial Analysis:** Assigns cultural locations to a hexagonal grid covering the study area.
-- **Diversity Metrics:** Calculates several diversity indices per grid cell:
-  - **Richness** (number of unique cultural categories)
-  - **Simpson Diversity Index**
-  - **Berger-Parker Dominance**
-  - **Shannon-Wiener Diversity**
+- **1. Libraries:** downloads all the necessary packages.
+- **2. Diversity indexes:** Adds formulas for calculating diversity.
+- **3. Grid creation:** Creates a hexagonal grid:
+  - **Richness** number of unique cultural categories in each hexagon/buffer.
+  - **Simpson Diversity Index:** probability that two randomly selected locations belong to different categories in each hexagon/buffer.
+  - **Berger-Parker Dominance:** proportion of the most abundant category (values near 1 indicate dominance)
+  - **Shannon-Wiener Diversity:** the uncertainty in predicting species identity of a random individual
   - **Shannon-Wiener Equity**
-- **Visualization:** Maps the spatial distribution of diversity metrics using interactive and static plots.
+- **4. Cultural cityscape diversity. Hexagons as a unit of calculation**
+- **5. Diversity of cultural cityscape. Buildings as a unit of calculation:**
+- **6. Results Visualisation:** 
+- **7. Descriptive stats:** Creates and saves in png. boxplots and histograms for each diversity index
 
 ---
 
@@ -81,15 +83,6 @@ This project provides a Python-based workflow for calculating and visualizing **
 
 ---
 
-## Diversity Indices Explained
-
-- **Richness:** Number of unique cultural categories in each hex.
-- **Simpson Index:** Probability that two randomly selected locations belong to different categories.
-- **Berger-Parker:** Proportion of the most abundant category (values near 1 indicate dominance).
-- **Shannon-Wiener:** Measures both abundance and evenness of categories.
-- **Shannon-Wiener Equity:** Normalized entropy (evenness).
-
----
 
 ## Customization
 
@@ -98,7 +91,3 @@ This project provides a Python-based workflow for calculating and visualizing **
 - **Area of Interest:** Use any city or district supported by OSMnx.
 
 ---
-
-## Contact
-
-For questions or contributions, please open an issue or contact the repository maintainer.
