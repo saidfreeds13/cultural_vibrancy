@@ -3,7 +3,14 @@
 This project provides a Python-based calculation and visualization of **cultural cityscape diversity** within urban areas. It includes two units of diversity analysis. First, the one via hexagons. Second, the one via buffer zones around residential buildings. At the end of each part of the code for two different units of analysis there is a section for merging and downloading in geopackages the cleaned dataset containing all 5 diversity indexes, allowing for a comparative analysis. 
 
 ---
+## Installation
 
+**Download the file "Diversity_indexes.ipynb"** and open it in python 
+
+## Data inputs needed
+- **Cultural locations:** Any geo-file (`arts_petr.gpkg`) with point locations and a **categorical column** (e.g., `Рубрики` for type/category of a cultural location).
+- **Study area:** Define the area (`"Петроградская"`) for boundary extraction.
+---
 ## Code sections
 
 - **1. Libraries:** downloads all the necessary packages.
@@ -18,17 +25,6 @@ This project provides a Python-based calculation and visualization of **cultural
 - **5. Diversity of cultural cityscape. Buildings as a unit of calculation:**
 - **6. Results Visualisation:** 
 - **7. Descriptive stats:** Creates and saves in png. boxplots and histograms for each diversity index
-
----
-
-## Installation
-
-**Download the file "Diversity_indexes.ipynb"** and open it in python 
-
-## Data inputs needed
-- **Cultural locations:** Any geo-file (`arts_petr.gpkg`) with point locations and a **categorical column** (e.g., `Рубрики` for type/category of a cultural location).
-- **Study area:** Define the area (`"Петроградская"`) for boundary extraction.
----
 
 ---
 
