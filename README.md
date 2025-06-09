@@ -13,7 +13,7 @@ This project provides a Python-based calculation and visualization of **cultural
   - **Simpson Diversity Index:** probability that two randomly selected locations belong to different categories in each hexagon/buffer.
   - **Berger-Parker Dominance:** proportion of the most abundant category (values near 1 indicate dominance)
   - **Shannon-Wiener Diversity:** the uncertainty in predicting species identity of a random individual
-  - **Shannon-Wiener Equity**
+  - **Shannon-Wiener Equity:** neasures how evenly locations are distributed among species, with a value of 1 indicating perfect evenness and values closer to 0 indicating dominance by one or a few species
 - **4. Cultural cityscape diversity. Hexagons as a unit of calculation**
 - **5. Diversity of cultural cityscape. Buildings as a unit of calculation:**
 - **6. Results Visualisation:** 
