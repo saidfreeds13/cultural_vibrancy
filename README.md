@@ -30,7 +30,7 @@ This project provides a Python-based calculation and visualization of **cultural
 
 ## Adaptation for a user's input 
 
-- **Grid Resolution:** Adjust the the grid resolution.
-- **Category Column:** Change `Рубрики` to match your dataset structure.
-- **Area of Interest:** Use any city or district supported by OSM.
+- **Grid resolution:** Adjust the the grid resolution.
+- **Category column:** Change `Рубрики` to match your dataset structure.
+- **Area of interest:** Use any city or district supported by OSM.
 ---
