@@ -23,47 +23,18 @@ This project provides a Python-based calculation and visualization of **cultural
 
 ## Installation
 
-**Download the file "Diversity_indexes.ipynb" and open it in python 
+**Download the file "Diversity_indexes.ipynb"** and open it in python 
 
 ## Data inputs needed
 - **Cultural locations:** Any geo-file (`arts_petr.gpkg`) with point locations and a **categorical column** (e.g., `Рубрики` for type/category of a cultural location).
 - **Study area:** Define the area (`"Петроградская"`) for boundary extraction.
 ---
 
-## Usage
-
-1. **Load and Prepare Data**
-    - Import the required libraries.
-    - Load the cultural locations file and reproject to a suitable CRS (e.g., EPSG:32636).
-    - Retrieve the study area's boundary using OSMnx and reproject as needed.
-    - Spatially join points to the area boundary to filter relevant locations.
-
-2. **Create Hexagonal Grid**
-    - Use the H3 library to create a hexagonal grid (resolution can be adjusted).
-    - Convert H3 indices to polygons and create a GeoDataFrame.
-    - Reproject the grid to match your data.
-
-3. **Assign Locations to Grid**
-    - Spatially join cultural locations to hex grid cells.
-
-4. **Calculate Diversity Indices**
-    - For each hex cell, calculate:
-        - **Richness:** Number of unique categories.
-        - **Simpson Diversity:** 1 minus the sum of squared proportions.
-        - **Berger-Parker Dominance:** Maximum proportion of a single category.
-        - **Shannon-Wiener Diversity:** Entropy-based diversity.
-        - **Shannon-Wiener Equity:** Evenness of diversity.
-
-5. **Visualize Results**
-    - Merge diversity results back to the grid.
-    - Plot maps using `matplotlib` and `contextily` for each diversity index.
-    - Optionally, use `folium` for interactive web maps.
-
 ---
 
-## Customization
+## Adaptation for a user's input 
 
-- **Grid Resolution:** Adjust the H3 resolution for finer or coarser grids.
-- **Category Column:** Change `Рубрики` to match your dataset.
-- **Area of Interest:** Use any city or district supported by OSMnx.
+- **Grid Resolution:** Adjust the the grid resolution.
+- **Category Column:** Change `Рубрики` to match your dataset structure.
+- **Area of Interest:** Use any city or district supported by OSM.
 ---
